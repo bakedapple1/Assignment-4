@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 
 function NewtonsMethod() {
     const [guess, setGuess] = useState(0);
-    const [permutations, setPermutations] = useState("");
-    const [aprox, setAprox] = useState("");
+    const permutations = useRef(1);
+    const [aprox, setAprox] = useState(""); // Change this into useRef
 
     function getFOfX(x) {
         return 6 * x ** 4 - 13 * x ** 3 - 18 * x ** 2 + 7 * x + 6;
@@ -19,15 +19,13 @@ function NewtonsMethod() {
 
         let varPrevAprox = guess;
         let varAprox = varPrevAprox - getFOfX(varPrevAprox) / getFPrimeOfX(varPrevAprox);
-        let varPerms = 1;
 
         while (Math.abs(varAprox - varPrevAprox) >= 0.0001) {
-            varPerms++;
+            permutations.current++;
             varPrevAprox = varAprox;
             varAprox = varPrevAprox - getFOfX(varPrevAprox) / getFPrimeOfX(varPrevAprox);
         }
 
-        setPermutations(varPerms);
         setAprox(varAprox);
     }
 
@@ -38,7 +36,7 @@ function NewtonsMethod() {
                 <label htmlFor="guess">Root Guess:</label>
                 <input type="number" step="any" name="guess" id="guess" onChange={(event) => { setGuess(Number(event.target.value)) }} required />
                 <label htmlFor="resPerms">Permutations:</label>
-                <input type="text" name="permuts" id="resPerms" value={permutations} readOnly /> 
+                <input type="text" name="permuts" id="resPerms" value={permutations.current} readOnly /> 
                 <label htmlFor="resN">Root Approximation:</label>
                 <input type="text" name="result" id="resN" value={aprox} readOnly />
                 <input type="submit" value="Calculate" className="submit-button" id="newt-submit" />

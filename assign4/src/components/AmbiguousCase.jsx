@@ -5,31 +5,28 @@ function AmbiguousCase() {
     const [angA, setAngA] = useState(0);
     const [sideA, setSideA] = useState(0);
     const [sideB, setSideB] = useState(0);
-    const [height, setHeight] = useState(0);
     const [result, setResult] = useState("");
 
     function findTriangle(event) {
         event.preventDefault();
 
-        setHeight(Number((sideB * Math.sin(angA * Math.PI / 180)).toFixed(10)))
+        const height = Number((sideB * Math.sin(angA * Math.PI / 180)).toFixed(10))
 
-        if (sideA != "" && sideB != "" && angA != "") {
-            if (angA >= 90) {
-                if (sideA <= sideB) {
-                    setResult("no triangle");
-                } else {
-                    setResult("one triangle");
-                }
+        if (angA >= 90) {
+            if (sideA <= sideB) {
+                setResult("no triangle");
             } else {
-                if (sideA < height) {
-                    setResult("no triangle");
-                } else if (sideA == height) {
-                    setResult("right triangle");
-                } else if (sideA > sideB) {
-                    setAngA("one triangle");
-                } else if (sideA > height && sideA < sideB) {
-                    setResult("two triangles (ambiguous case)");
-                }
+                setResult("one triangle");
+            }
+        } else {
+            if (sideA < height) {
+                setResult("no triangle");
+            } else if (sideA == height) {
+                setResult("right triangle");
+            } else if (sideA >= sideB) {
+                setResult("one triangle");
+            } else if (sideA > height && sideA < sideB) {
+                setResult("two triangles (ambiguous case)");
             }
         }
     }

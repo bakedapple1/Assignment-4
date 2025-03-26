@@ -1,6 +1,7 @@
 import './App.css'
 import AmbiguousCase from './components/AmbiguousCase.jsx'
-import HeronsFormula from './components/HeronsFormula'
+import HeronsFormula from './components/HeronsFormula.jsx'
+import NewtonsMethod from './components/NewtonsMethod.jsx'
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
     <>
       <HeronsFormula />
       <AmbiguousCase />
-    </>
+      <NewtonsMethod />
+    </> 
   )
 }
 

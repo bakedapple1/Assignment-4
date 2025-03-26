@@ -1,11 +1,14 @@
 import './App.css'
+import AmbiguousCase from './components/AmbiguousCase.jsx'
 import HeronsFormula from './components/HeronsFormula'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <HeronsFormula />
+    <>
+      <HeronsFormula />
+      <AmbiguousCase />
+    </>
   )
 }
 

@@ -21,13 +21,11 @@ function NewtonsMethod() {
         let varAprox = varPrevAprox - getFOfX(varPrevAprox) / getFPrimeOfX(varPrevAprox);
 
         permutations.current = 1;
-        console.log(varAprox, permutations.current);
 
         while (Math.abs(varAprox - varPrevAprox) >= 0.0001) {
             permutations.current++;
             varPrevAprox = varAprox;
             varAprox = varPrevAprox - getFOfX(varPrevAprox) / getFPrimeOfX(varPrevAprox);
-            console.log(varAprox, permutations.current);
         }
 
         setAprox(varAprox);

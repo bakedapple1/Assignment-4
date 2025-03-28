@@ -1,10 +1,10 @@
-import { use, useState } from "react";
+import { useState } from "react";
 
 
 function PolyFunc() {
     const [coeff, setCoeff] = useState("");
     const [expo, setExpo] = useState("");
-    const [xVal, setXVal] = useState("");
+    const [x, setX] = useState("");
     const [resFunc, setResFunc] = useState("");
     const [resEval, setResEval] = useState("");
 
@@ -38,7 +38,7 @@ function PolyFunc() {
                 }
             }
     
-            varResEval += coeff[i] * xVal ** expo[i];
+            varResEval += coeff[i] * x ** expo[i];
         }
 
         setResFunc(varResFunc);
@@ -55,7 +55,7 @@ function PolyFunc() {
                 <label htmlFor="expo">Exponents:</label>
                 <input type="text" name="expo" id="expo" onChange={(event) => { setExpo(event.target.value.split(" ").map(Number)) }} required />
                 <label htmlFor="xVal">x Value:</label>
-                <input type="number" step="any" name="xVal" id="xVal" onChange={(event) => { Number(setXVal(event.target.value)) }} required />
+                <input type="number" step="any" name="xVal" id="xVal" onChange={(event) => { Number(setX(event.target.value)) }} required />
                 <label htmlFor="resFunc">Polynomial Function:</label>
                 <input type="text" name="permuts" id="resFunc" value={resFunc} readOnly />
                 <label htmlFor="resEval">Polynomial Evaluation:</label>

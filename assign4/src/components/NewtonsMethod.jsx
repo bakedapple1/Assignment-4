@@ -38,7 +38,7 @@ function NewtonsMethod() {
                 <label htmlFor="guess">Root Guess:</label>
                 <input type="number" step="any" name="guess" id="guess" onChange={(event) => { setGuess(Number(event.target.value)) }} required />
                 <label htmlFor="resPerms">Permutations:</label>
-                <input type="text" name="permuts" id="resPerms" value={permutations.current} readOnly /> 
+                <input type="text" name="permuts" id="resPerms" value={permutations.current} readOnly />
                 <label htmlFor="resN">Root Approximation:</label>
                 <input type="text" name="result" id="resN" value={aprox} readOnly />
                 <input type="submit" value="Calculate" className="submit-button" id="newt-submit" />

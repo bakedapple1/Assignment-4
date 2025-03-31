@@ -45,7 +45,6 @@ function PolyFunc() {
         setResEval(varResEval);
     }
 
-
     return (
         <div className="calculators">
             <h1 className="title">Polynomial Function</h1>
@@ -64,7 +63,6 @@ function PolyFunc() {
             </form>
         </div >
     );
-
 }
 
 export default PolyFunc;

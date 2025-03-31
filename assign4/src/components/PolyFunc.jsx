@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 function PolyFunc() {
     const [coeff, setCoeff] = useState("");
     const [expo, setExpo] = useState("");
@@ -10,7 +9,6 @@ function PolyFunc() {
 
     function generateFunc(event) {
         event.preventDefault();
-
         let varResFunc = "f(x)=";
         let varResEval = 0;
 

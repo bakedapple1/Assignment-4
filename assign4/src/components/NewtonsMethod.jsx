@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 
-
 function NewtonsMethod() {
     const [guess, setGuess] = useState(0);
     const [aprox, setAprox] = useState("");
@@ -16,7 +15,6 @@ function NewtonsMethod() {
 
     function findRoots(event) {
         event.preventDefault();
-
         let varPrevAprox = guess;
         let varAprox = varPrevAprox - getFOfX(varPrevAprox) / getFPrimeOfX(varPrevAprox);
 

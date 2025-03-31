@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-
 function HeronsFormula() {
     const [sideA, setSideA] = useState("");
     const [sideB, setSideB] = useState("");

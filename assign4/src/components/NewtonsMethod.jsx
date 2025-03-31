@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 
 function NewtonsMethod() {
     const [guess, setGuess] = useState(0);
-    const [aprox, setAprox] = useState("");
+    const [result, setResult] = useState("");
     const permutations = useRef("");
 
     function getFOfX(x) {
@@ -26,7 +26,7 @@ function NewtonsMethod() {
             varAprox = varPrevAprox - getFOfX(varPrevAprox) / getFPrimeOfX(varPrevAprox);
         }
 
-        setAprox(varAprox);
+        setResult(varAprox);
     }
 
     return (
@@ -38,7 +38,7 @@ function NewtonsMethod() {
                 <label htmlFor="resPerms">Permutations:</label>
                 <input type="text" name="permuts" id="resPerms" value={permutations.current} readOnly />
                 <label htmlFor="resN">Root Approximation:</label>
-                <input type="text" name="result" id="resN" value={aprox} readOnly />
+                <input type="text" name="result" id="resN" value={result} readOnly />
                 <input type="submit" value="Calculate" className="submit-button" id="newt-submit" />
             </form>
         </div>

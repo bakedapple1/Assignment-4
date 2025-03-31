@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 function HeronsFormula() {
-    const [sideA, setSideA] = useState("");
-    const [sideB, setSideB] = useState("");
-    const [sideC, setSideC] = useState("");
+    const [sideA, setSideA] = useState(0);
+    const [sideB, setSideB] = useState(0);
+    const [sideC, setSideC] = useState(0);
     const [area, setArea] = useState("");
 
     function calculateArea(event) {

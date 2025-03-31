@@ -3,7 +3,7 @@ import { useState } from "react";
 function PolyFunc() {
     const [coeff, setCoeff] = useState("");
     const [expo, setExpo] = useState("");
-    const [x, setX] = useState("");
+    const [x, setX] = useState(0);
     const [resFunc, setResFunc] = useState("");
     const [resEval, setResEval] = useState("");
 

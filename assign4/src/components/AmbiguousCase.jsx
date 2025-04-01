@@ -8,7 +8,7 @@ function AmbiguousCase() {
 
     function findTriangle(event) {
         event.preventDefault();
-        const height = Number((sideB * Math.sin(angA * Math.PI / 180)).toFixed(10))
+        const height = Number((sideB * Math.sin(angA * Math.PI / 180)).toFixed(10));
 
         if (angA >= 90) {
             if (sideA <= sideB) {
